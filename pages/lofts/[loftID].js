@@ -2,11 +2,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { FiArrowLeft } from 'react-icons/fi'
+import { _Animation_TabTransition } from '../../global/_Animations'
+
+// tabs
 import Tab_ActiveRaces from '../../components/Lofts/Tab_ActiveRaces'
 import Tab_Fanciers from '../../components/Lofts/Tab_Fanciers'
 import Tab_Races from '../../components/Lofts/Tab_Races'
 import Tab_Trainings from '../../components/Lofts/Tab_Trainings'
-import { _Animation_TabTransition } from '../globals'
 
 const LoftDetailPage = e => {
     const router = useRouter()
@@ -53,12 +55,25 @@ const LoftDetailPage = e => {
                 </div>
             </div>
 
+            {/* mobile selec tab */}
+            <div className="form-control md:hidden w-full my-5">
+                <label className="label">
+                    <span className="label-text">Select Tab</span>
+                </label>
+                <select value={tabIndex} className="select select-bordered w-full" onChange={(e) => setTabIndex(e.target.value)}>
+                    <option value={1}>Active Races</option>
+                    <option value={2}>Races</option>
+                    <option value={3}>Trainings</option>
+                    <option value={4}>Fanciers</option>
+                </select>
+            </div>
+
             {/* tabs */}
-            <div class="tabs tabs-boxed my-5">
-                <a onClick={() => setTabIndex(1)} class={`tab ${tabIndex == 1 ? 'tab-active' : ''}`}>Active Races</a>
-                <a onClick={() => setTabIndex(2)} class={`tab ${tabIndex == 2 ? 'tab-active' : ''}`}>Races</a>
-                <a onClick={() => setTabIndex(3)} class={`tab ${tabIndex == 3 ? 'tab-active' : ''}`}>Trainings</a>
-                <a onClick={() => setTabIndex(4)} class={`tab ${tabIndex == 4 ? 'tab-active' : ''}`}>Fanciers</a>
+            <div className="tabs tabs-boxed my-5 hidden md:block">
+                <a onClick={() => setTabIndex(1)} className={`tab ${tabIndex == 1 ? 'tab-active' : ''}`}>Active Races</a>
+                <a onClick={() => setTabIndex(2)} className={`tab ${tabIndex == 2 ? 'tab-active' : ''}`}>Races</a>
+                <a onClick={() => setTabIndex(3)} className={`tab ${tabIndex == 3 ? 'tab-active' : ''}`}>Trainings</a>
+                <a onClick={() => setTabIndex(4)} className={`tab ${tabIndex == 4 ? 'tab-active' : ''}`}>Fanciers</a>
             </div>
             <AnimatePresence>
                 {tabIndex == 1 && (<Tab_ActiveRaces />)}

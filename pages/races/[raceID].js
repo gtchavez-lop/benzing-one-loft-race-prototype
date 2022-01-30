@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
-import { _Animation_PageTransition, _Animation_TabTransition } from "../globals"
+import { _Animation_PageTransition, _Animation_TabTransition } from "../../global/_Animations"
 import { AnimatePresence, motion } from "framer-motion"
 import { FiArchive, FiArrowLeft, FiInfo, FiList, FiRadio } from 'react-icons/fi'
 

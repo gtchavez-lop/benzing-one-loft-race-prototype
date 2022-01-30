@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { _Animation_PageTransition } from "./globals"
+import { _Animation_PageTransition } from "../global/_Animations"
 
 export default function Home() {
   return (

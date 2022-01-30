@@ -54,9 +54,7 @@ export const _Animation_TabTransition = {
 export const _Animation_SideMenu = {
     initial: {
         opacity: 0,
-        scale: 0.8,
-        originX: 0,
-        originY: 0,
+        x: -100,
         transition: {
             ease: [0.06, 0.77, 0, 0.99],
             duration: 0.2
@@ -64,16 +62,15 @@ export const _Animation_SideMenu = {
     },
     open: {
         opacity: 1,
-        scale: 1,
-        originX: 0,
-        originY: 0,
+        x: 0,
         transition: {
-            ease: [0.06, 0.77, 0, 0.99],
-            duration: 0.3
+            ease: [0.2, 1, 0, 1],
+            duration: 0.5
         }
     },
     exit: {
         opacity: 0,
+        x: -100,
         transition: {
             ease: [0.76, 0.25, 0.21, 0.71],
             duration: 0.2
@@ -103,6 +100,33 @@ export const _Animation_BottomMenu = {
         y: '30%',
         transition: {
             ease: [0.5, 0, 0.45, 1],
+            duration: 0.2
+        }
+    }
+}
+
+export const _Animation_ScrollToTopButton = {
+    initial: {
+        opacity: 0,
+        x: 100,
+        transition: {
+            ease: [0.2, 1, 0, 1],
+            duration: 0.2
+        }
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            ease: [0.2, 1, 0, 1],
+            duration: 0.2
+        }
+    },
+    exit: {
+        opacity: 0,
+        x: 100,
+        transition: {
+            ease: [0.2, 1, 0, 1],
             duration: 0.2
         }
     }

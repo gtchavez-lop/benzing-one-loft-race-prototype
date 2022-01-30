@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { _Animation_TabTransition } from '../../pages/globals'
+import { _Animation_TabTransition } from '../../global/_Animations'
 
 const Tab_Fanciers = e => {
     return (

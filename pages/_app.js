@@ -1,12 +1,35 @@
 import '../styles/globals.css'
 import Navigation from '../components/Navigation'
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import { useRouter, Router } from 'next/router'
 import Footer from '../components/Footer'
-import Head from 'next/head'
+import { useState } from 'react'
+import { FiArrowUp } from 'react-icons/fi'
+import { _Animation_ScrollToTopButton } from '../global/_Animations'
 
 function MyApp({ Component, pageProps }) {
   let router = useRouter()
+
+  // detect scroll y value
+  const [isVisible, set_isVisible] = useState(false)
+  const toggleSrollVisibility = e => {
+    const scrollY = window.scrollY
+    if (scrollY > 150) {
+      set_isVisible(true)
+    } else {
+      set_isVisible(false)
+    }
+  }
+
+  // scroll to top
+  const scrollToTop = e => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  // window.addEventListener('scroll', toggleSrollVisibility)
 
   return (
     <>
@@ -23,6 +46,15 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} key={router.route} />
           </AnimatePresence>
         </AnimateSharedLayout>
+
+        {isVisible && (
+          <motion.button
+            onClick={scrollToTop}
+            className='btn btn-circle btn-ghost fixed z-30 bottom-5 right-5'>
+            <FiArrowUp className='h-6 w-6' />
+          </motion.button>
+
+        )}
 
         <Footer />
 

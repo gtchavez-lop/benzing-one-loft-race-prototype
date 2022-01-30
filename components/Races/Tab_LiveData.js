@@ -1,6 +1,6 @@
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import { useState } from 'react'
-import { _Animation_TabTransition } from '../../pages/globals'
+import { _Animation_TabTransition } from '../../global/_Animations'
 import LiveData_Card from './Card_LiveData'
 
 const _Animation_List_TopTen = {
@@ -21,16 +21,16 @@ const Tab_LiveData = e => {
             <p className="text-4xl text-center md:text-left mb-20 md:mb-10">Live Data</p>
 
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+            <div className='grid grid-cols-1 gap-5'>
                 <motion.div className=''>
                     <p className='text-2xl'>Top 10 Arrivals</p>
                     <button onClick={() => set_TopTenDataShown(_TopTenDataShown ? false : true)}
-                        className='btn btn-primary btn-block my-5'>{_TopTenDataShown ? "Hide" : "Show"} List</button>
+                        className='btn btn-primary btn-outline btn-block my-5'>{_TopTenDataShown ? "Hide" : "Show"} List</button>
                     <AnimatePresence exitBeforeEnter>
                         {_TopTenDataShown && (
                             <motion.div variants={_Animation_List_TopTen}
                                 initial='initial' animate='animate' exit='exit' layout
-                                className='grid grid-cols-1 gap-5'>
+                                className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                                 <AnimateSharedLayout>
                                     <LiveData_Card />
                                     <LiveData_Card />
@@ -57,7 +57,7 @@ const Tab_LiveData = e => {
                         {_MainDataShown && (
                             <motion.div variants={_Animation_List_TopTen}
                                 initial='initial' animate='animate' exit='exit' layout
-                                className='grid grid-cols-1 gap-5'>
+                                className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                                 <AnimateSharedLayout>
                                     <LiveData_Card />
                                     <LiveData_Card />

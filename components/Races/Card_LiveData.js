@@ -5,7 +5,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Flag from 'react-world-flags'
 
-import { _Animation_BottomMenu } from "../../pages/globals"
+import { _Animation_BottomMenu } from "../../global/_Animations"
 
 const _Animation_ShowDetail = {
     initial: { opacity: 0, },
@@ -21,12 +21,12 @@ const _FancierData = ({ closeHandler }) => {
             initial="initial" animate="animate" exit="exit"
             className="fixed w-screen h-full bg-gray-900 bg-opacity-50 bottom-0 left-0 z-30">
             <div className="absolute bottom-0 left-0 h-3/4 w-full bg-slate-900">
-                <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
-                    <div class="lg:px-40 navbar-start">
+                <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
+                    <div className="lg:px-40 navbar-start">
                         <button className="btn btn-square mr-5" onClick={closeHandler}>
                             <FiX className="w-7 h-7" />
                         </button>
-                        <span class="text-lg font-bold">
+                        <span className="text-lg font-bold">
                             Fancier Data
                         </span>
                     </div>
@@ -44,12 +44,12 @@ const _PigeonData = ({ closeHandler }) => {
             initial="initial" animate="animate" exit="exit"
             className="fixed w-screen h-full bg-gray-900 bg-opacity-50 bottom-0 left-0 z-30">
             <div className="absolute bottom-0 left-0 h-3/4 w-full bg-slate-900">
-                <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
-                    <div class="lg:px-40 navbar-start">
+                <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
+                    <div className="lg:px-40 navbar-start">
                         <button className="btn btn-square mr-5" onClick={closeHandler}>
                             <FiX className="w-7 h-7" />
                         </button>
-                        <span class="text-lg font-bold">
+                        <span className="text-lg font-bold">
                             Pigeon Data
                         </span>
                     </div>
@@ -68,12 +68,12 @@ const LiveData_Card = e => {
         <>
             <motion.div layout className="card shadow bg-green-900 bg-opacity-25 rounded overflow-hidden select-none">
                 <div className="card-body p-5" onClick={() => set_MainDataShown(_MainDataShown ? false : true)}>
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-2 text-sm'>
                         <div className='grid grid-cols-2 mb-5 text-2xl text-orange-500'>
                             <p className='font-bold '>Rank</p>
                             <p>1</p>
                         </div>
-                        <div className='grid grid-cols-2 '>
+                        <div className='grid grid-cols-2'>
                             <p className='font-bold text-slate-300'>Fancier Name</p>
                             <p>Gerald Chavez</p>
                         </div>
@@ -96,7 +96,7 @@ const LiveData_Card = e => {
                         {/* hidden info */}
 
                         {!_MainDataShown && (
-                            <p layout className="text-center text-sm opacity-50 mt-5">
+                            <p layout className="text-center text-xs opacity-50 my-2">
                                 Click to show more
                             </p>
 
@@ -104,7 +104,7 @@ const LiveData_Card = e => {
                         <AnimatePresence>
                             {_MainDataShown && (
                                 <motion.div layout variants={_Animation_ShowDetail} initial='initial' animate='animate' exit='exit'>
-                                    <div className='grid grid-cols-2 '>
+                                    <div className='grid grid-cols-2 gap-2'>
                                         <p className='font-bold text-slate-300'>Team</p>
                                         <p>Unassigned</p>
                                     </div>
@@ -122,7 +122,7 @@ const LiveData_Card = e => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-2 mt-2'>
+                <div className='grid grid-cols-2 '>
                     <button className='btn btn-sm btn-primary rounded-none' onClick={() => {
                         set_FancierDataShown(true)
                     }}>Fancier Data</button>

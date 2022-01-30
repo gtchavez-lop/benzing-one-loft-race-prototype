@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
-import { _Animation_TabTransition } from '../../pages/globals'
+import { _Animation_TabTransition } from '../../global/_Animations'
 // import { ArrowsExpandIcon, ClockIcon, LocationMarkerIcon, SaveIcon, TrendingUpIcon } from '@heroicons/react/outline'
 import { FiArchive, FiArrowDownLeft, FiClock, FiExpa, FiMapPin, FiTrendingUp } from 'react-icons/fi'
 

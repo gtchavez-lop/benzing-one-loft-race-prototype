@@ -5,7 +5,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Flag from 'react-world-flags'
 
-import { _Animation_BottomMenu } from "../../pages/globals"
+import { _Animation_BottomMenu } from "../../global/_Animations"
 
 const _FancierData = ({ closeHandler }) => {
     console.log('_FancierData')
@@ -15,12 +15,12 @@ const _FancierData = ({ closeHandler }) => {
             initial="initial" animate="animate" exit="exit"
             className="fixed w-screen h-full bg-gray-900 bg-opacity-50 bottom-0 left-0 z-30">
             <div className="absolute bottom-0 left-0 h-3/4 w-full bg-slate-900">
-                <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
-                    <div class="lg:px-40 navbar-start">
+                <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
+                    <div className="lg:px-40 navbar-start">
                         <button className="btn btn-square mr-5" onClick={closeHandler}>
                             <FiX className="w-7 h-7" />
                         </button>
-                        <span class="text-lg font-bold">
+                        <span className="text-lg font-bold">
                             Fancier Data
                         </span>
                     </div>
@@ -38,12 +38,12 @@ const _PigeonData = ({ closeHandler }) => {
             initial="initial" animate="animate" exit="exit"
             className="fixed w-screen h-full bg-gray-900 bg-opacity-50 bottom-0 left-0 z-30">
             <div className="absolute bottom-0 left-0 h-3/4 w-full bg-slate-900">
-                <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
-                    <div class="lg:px-40 navbar-start">
+                <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content ">
+                    <div className="lg:px-40 navbar-start">
                         <button className="btn btn-square mr-5" onClick={closeHandler}>
                             <FiX className="w-7 h-7" />
                         </button>
-                        <span class="text-lg font-bold">
+                        <span className="text-lg font-bold">
                             Pigeon Data
                         </span>
                     </div>

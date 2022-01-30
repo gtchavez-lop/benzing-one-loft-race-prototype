@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
-import { _Animation_TabTransition } from '../../pages/globals'
+import { _Animation_TabTransition } from '../../global/_Animations'
 import Card from './Card_BasketingList'
 
 const Tab_BasketingList = e => {
