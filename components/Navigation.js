@@ -25,7 +25,7 @@ const NavigationBar = e => {
                         setSideMenuOpen(!sideMenuOpen)
                     }} />
                     <Link href='/' >
-                        <div className="cursor-pointer items-center hidden lg:flex">
+                        <div className="cursor-pointer items-center hidden lg:flex" onClick={() => setActiveTab('')}>
                             <Image src="/brand_white.svg" width={35} height={35} />
                             <span className=" font-bold ml-2">
                                 BENZING - One Loft Race

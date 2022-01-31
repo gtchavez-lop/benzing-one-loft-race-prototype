@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { _Animation_PageTransition } from "../../global/_Animations"
 
 const _Transition_CardHover = {
     scale: 1.02,
@@ -21,6 +22,7 @@ const Card_Race = ({ raceID }) => {
         <motion.div
             whileHover={_Transition_CardHover}
             whileTap={_Transition_CardTap}
+            variants={_Animation_PageTransition}
             className="card card-bordered shadow-md cursor-pointer bg-green-900 bg-opacity-25">
             <figure>
                 <img className='h-40 object-cover' src="https://images.unsplash.com/photo-1560223715-a7066e66f501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" />

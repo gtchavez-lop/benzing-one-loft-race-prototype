@@ -1,25 +1,23 @@
 export const _Animation_PageTransition = {
     initial: {
-        x: 20,
+        y: -40,
         opacity: 0,
-        transition: {
-            ease: [0.1, 0.7, 0.25, 1],
-            duration: 0.2
-        }
     },
     animate: {
-        x: 0,
+        y: 0,
         opacity: 1,
         transition: {
-            ease: [0.5, 0, 0.45, 1],
-            duration: 0.2
+            ease: [0.2, 0.9, 0, 1],
+            duration: 0.5,
+            staggerChildren: 0.05
         }
     },
     exit: {
+        y: 5,
         opacity: 0,
         transition: {
-            ease: [0.5, 0, 0.45, 1],
-            duration: 0.2
+            ease: [0.25, 1, 0, 1],
+            duration: 0.3
         }
     }
 }
